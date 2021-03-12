@@ -4,66 +4,44 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 //the coins data! use "" not ''! (note) --------------------------------------
 @Entity
-@Table(name ="coins")
-public class Coin {
-
-    //This generates an id (long) of a coin object. Unique to all coins
-    //Fields ----------------------------------------------------------------
+@Table(name = "coins")
+public class Coin
+{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long coinid;
+
+    private int quantity;
+    private double value;
     private String name;
     private String nameplural;
-    private double value;
-    private int quantity;
 
     //Default Constructor ---------------------------------------------------
     public Coin()
     {
+
     }
 
     //Constructor for Coin --------------------------------------------------
-    public Coin(String name, String nameplural, double value, int quantity)
-    {
-        this.name = name;
-        this.nameplural = nameplural;
-        this.value = value;
+    public Coin(int quantity, double value, String name, String nameplural) {
         this.quantity = quantity;
-    }
-    //Generated Getters & Setters (how handy!) -------------------------------
-    public long getCoinid() {
-        return coinid;
-    }
-
-    public void setCoinid(long coinid) {
-        this.coinid = coinid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+        this.value = value;
         this.name = name;
-    }
-
-    public String getnameplural() {
-        return nameplural;
-    }
-
-    public void setNameplural(String nameplural) {
         this.nameplural = nameplural;
     }
 
-    public double getValue() {
-        return value;
+    //Generated Getters & Setters (how handy!) -------------------------------
+
+    public int getCoinid() {
+        return (int) coinid;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setCoinid(int coinid) {
+        this.coinid = coinid;
     }
 
     public int getQuantity() {
@@ -74,16 +52,40 @@ public class Coin {
         this.quantity = quantity;
     }
 
-    //Overriding the toString() ---------------------------------------
+    public double getValue() {
+        return value;
+    }
 
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameplural() {
+        return nameplural;
+    }
+
+    public void setNameplural(String nameplural) {
+        this.nameplural = nameplural;
+    }
+
+    //Overriding the toString() ---------------------------------------
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Coin{" +
                 "coinid=" + coinid +
+                ", quantity=" + quantity +
+                ", value=" + value +
                 ", name='" + name + '\'' +
                 ", nameplural='" + nameplural + '\'' +
-                ", value=" + value +
-                ", quantity=" + quantity +
                 '}';
     }
 }
