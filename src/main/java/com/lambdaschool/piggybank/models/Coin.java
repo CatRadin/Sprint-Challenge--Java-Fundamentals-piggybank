@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 //the coins data! use "" not ''! (note) --------------------------------------
 @Entity
-@Table(name = "coins")
+@Table(name = "coins") //will always show an error!
 public class Coin
 {
     @Id
