@@ -12,8 +12,10 @@ CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 /*
  This is the actual seed data
  */
+
 DELETE
 FROM coins;
+
 
 INSERT INTO coins (coinid, name, nameplural, value, quantity)
            VALUES (1, 'Quarter', 'Quarters', 0.25, 1),

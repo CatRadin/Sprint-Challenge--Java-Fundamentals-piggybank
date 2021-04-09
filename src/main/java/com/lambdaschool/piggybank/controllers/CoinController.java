@@ -26,10 +26,11 @@ public class CoinController {
             }
         }
         return tempList;
+
     }
 
     //http://localhost:2019/coins/total
-    //Endpoint here (total) -------------------------------------------------------------------------
+    //Endpoint here (the total) -------------------------------------------------------------------------
     @GetMapping(value = "/total", produces={"application/json"})
     public ResponseEntity<?> getTotalValue()
     {

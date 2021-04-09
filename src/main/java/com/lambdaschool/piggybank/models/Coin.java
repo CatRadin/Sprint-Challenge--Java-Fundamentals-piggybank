@@ -36,6 +36,7 @@ public class Coin
 
     //Generated Getters & Setters (how handy!) -------------------------------
 
+
     public int getCoinid() {
         return (int) coinid;
     }
